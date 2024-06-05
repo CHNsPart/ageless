@@ -1,11 +1,12 @@
 import About from "@/components/About";
+import Blogs from "@/components/Blogs";
 import Choose from "@/components/Choose";
 import Hero from "@/components/Hero";
 import Journey from "@/components/Journey";
+import Premium from "@/components/Premium";
 import Profile from "@/components/Profile";
-import { Button } from "@/components/ui/button";
+import Reviews from "@/components/Reviews";
 import Video from "@/components/Video";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -18,6 +19,9 @@ export default function Home() {
         <Profile/>
         <Journey/>
         <Video/>
+        <Premium/>
+        <Blogs/>
+        <Reviews/>
     </main>
   );
 }
