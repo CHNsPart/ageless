@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/menubar";
 import { Button } from './ui/button';
 import Image from 'next/image';
+import { MobileNav } from './MobileNav';
 
 export default function Navbar() {
   return (
@@ -28,7 +29,12 @@ export default function Navbar() {
           <MenubarTrigger>Hire Trainer!</MenubarTrigger>
         </MenubarMenu>
       </Menubar>
-      <Button variant={"secondary"}>Sign In</Button>
+      <div className='flex justify-center items-center gap-2'>
+        <Button variant={"secondary"}>Sign In</Button>
+        <div className='lg:hidden'>
+          <MobileNav/>
+        </div>
+      </div>
     </div>
   );
 }
