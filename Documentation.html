@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Videos Site Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: white;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        code {
+            color: #c7254e;
+            background: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        .nav {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    
+        #reviews h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    
+        #reviews p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#introduction">Introduction</a>
+        <a href="#setup">Setup</a>
+        <a href="#usage">Usage</a>
+        <a href="#customization">Customization</a>
+        <a href="#components">Components</a>
+        <a href="#support">Support</a>
+    </div>
+    
+    <div class="container">
+        <section id="introduction">
+            <h1>Gym Videos Site Documentation</h1>
+            <p>Welcome to the documentation for the Gym Videos Site template. This guide will help you set up, customize, and use the template effectively.</p>
+        </section>
+
+        <section id="setup">
+            <h2>Setup</h2>
+            <p>To set up the project, follow these steps:</p>
+            <ol>
+                <li>Ensure you have Node.js and npm installed on your machine.</li>
+                <li>Download or clone the repository to your local machine.</li>
+                <li>Navigate to the project directory and run the following command to install the dependencies:</li>
+                <pre><code>npm install</code></pre>
+                <li>Start the development server using the following command:</li>
+                <pre><code>npm run dev</code></pre>
+                <li>Open your browser and navigate to <code>http://localhost:3000</code> to view the site.</li>
+            </ol>
+        </section>
+
+        <section id="usage">
+            <h2>Usage</h2>
+            <p>The main components of the site are located in the <code>src/components</code> directory. Each component is a separate file that can be edited individually.</p>
+        </section>
+
+        <section id="customization">
+            <h2>Customization</h2>
+            <p>To customize the template, you can modify the following files:</p>
+            <ul>
+                <li><code>src/components/About.tsx</code>: Update the About section content.</li>
+                <li><code>src/components/Hero.tsx</code>: Modify the Hero section.</li>
+                <li><code>src/components/Footer.tsx</code>: Edit the footer content and links.</li>
+            </ul>
+            <p>You can also add new components or modify existing ones as per your requirements.</p>
+        </section>
+
+        <section id="components">
+            <h2>Components</h2>
+            <p>The template includes the following components:</p>
+            <ul>
+                <li><code>About.tsx</code></li>
+                <li><code>Blogs.tsx</code></li>
+                <li><code>Choose.tsx</code></li>
+                <li><code>Footer.tsx</code></li>
+                <li><code>Hero.tsx</code></li>
+                <li><code>Journey.tsx</code></li>
+                <li><code>Premium.tsx</code></li>
+                <li><code>Profile.tsx</code></li>
+                <li><code>Reviews.tsx</code></li>
+                <li><code>Trainer.tsx</code></li>
+                <li><code>Video.tsx</code></li>
+            </ul>
+        </section>
+
+        <section id="photo-gallery">
+            <h2>Photo Gallery</h2>
+            <p>The Profile component includes a photo gallery implemented with a carousel. Here's how you can use and customize it:</p>
+            <pre><code>
+        const images = [
+          "/new-image-1.png",
+          "/new-image-2.png",
+          "/new-image-3.png",
+          // Add or remove image paths as needed
+        ];
+        
+        export default function Profile() {
+          return (
+            <div className='h-full py-24 w-full z-20 px-4 md:px-12 lg:px-48 relative'>
+              <div className='absolute inset-0'>
+                {/* Background Image */}
+              </div>
+              <div className='relative flex flex-col md:flex-row justify-end items-center'>
+                {/* Profile Header */}
+              </div>
+              <Carousel className="w-full mt-12 relative z-10">
+                <CarouselContent className="-ml-1">
+                  {images.map((image, index) => (
+                    <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                      <div className="p-1">
+                        <Card>
+                          <CardContent className="flex aspect-square items-center justify-center p-0">
+                            {/* Image Component */}
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className='text-primary border-primary' />
+                <CarouselNext className='text-primary border-primary' />
+              </Carousel>
+            </div>
+          );
+        }
+            </code></pre>
+            <p>This component uses a carousel to display a gallery of images. You can customize the images by updating the <code>images</code> array in the <code>Profile</code> component.</p>
+        </section>
+
+        <section id="reviews">
+            <h2>Client Reviews</h2>
+            <p>The Reviews component showcases testimonials from satisfied clients. Here's how you can use and customize it:</p>
+            <pre><code>
+        export default function Reviews() {
+          const [reviews, setReviews] = useState([
+            {
+              review: "New review from a satisfied customer.",
+              user: "Alice Johnson",
+              designation: "Marketing Manager"
+            },
+            {
+              review: "Excellent service! Highly recommended.",
+              user: "Bob Smith",
+              designation: "CEO"
+            },
+            {
+              review: "Amazing experience with this product.",
+              user: "Emily Davis",
+              designation: "Product Manager"
+            }
+          ]);
+        
+          const handleNext = () => {
+            // Logic to handle next review
+          };
+        
+          const handlePrevious = () => {
+            // Logic to handle previous review
+          };
+        
+          return (
+            <div className="reviews-container">
+              {reviews.map((review, index) => (
+                <div key={index} className="review">
+                  <div className="review-content">
+                    <p>{review.review}</p>
+                  </div>
+                  <div className="review-author">
+                    <p>{review.user}, {review.designation}</p>
+                  </div>
+                </div>
+              ))}
+              <div className="navigation">
+                <button onClick={handlePrevious}>Previous</button>
+                <button onClick={handleNext}>Next</button>
+              </div>
+            </div>
+          );
+        }
+            </code></pre>
+            <p>This component displays reviews from clients, allowing users to navigate through them using the arrow buttons.</p>
+        </section>
+        
+
+        <section id="support">
+            <h2>Support</h2>
+            <p>If you encounter any issues or have any questions, please contact our support team at <a href="mailto:imchn24@gmail.com">imchn24@gmail.com</a>.</p>
+        </section>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 <a style="text-decoration: none; color: #c7254e;" href="https://chnspart.com">CHNsPart</a>. All Rights Reserved.</p>
+    </div>
+</body>
+</html>
